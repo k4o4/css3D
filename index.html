@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3D image</title>
+</head>
+<body>
+<div class="layer-1">
+	<div class="layer-2"> 
+		<div class="layer-3"></div> 
+	</div>
+</div>
+
+<style type="text/css">
+
+@keyframes rotate {
+	from {transform: rotateY(-20deg);}
+	50% {transform: rotateY(20deg);}
+	to {transform: rotateY(-20deg);}
+}
+
+div {
+	background-size: contain;
+	height: 528px;
+	margin: auto;
+	width: 790px;
+	transition-duration: 0.5s;
+	transition-property: all;
+	transform-style: preserve-3d;
+}
+
+.layer-1 {
+	animation: rotate 4s infinite ease-in-out;
+	background-image: url(back.png);
+	position: relative;
+	top: 200px;
+}
+
+.layer-2 {
+	background-image: url(middle.png);
+	transform: translateZ(10px);
+}
+
+.layer-3 {
+	background-image: url(front.png);
+	transform: translateZ(15px);
+}
+
+</style>
+</body>
+</html>
